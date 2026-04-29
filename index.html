@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bánki Diáknap 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img id="nav-logo" src="assets/logo-dark.png" alt="Bánki Diáknap" class="nav-logo-img" onerror="this.style.display='none';document.getElementById('nav-logo-text').style.display='block'">
+        <span id="nav-logo-text" class="nav-logo-text" style="display:none">BÁNKI DIÁKNAP</span>
+        <span class="nav-brand-name">Diáknap 2026</span>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Téma váltás">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img id="hero-logo" src="assets/logo-dark.png" alt="Bánki Diáknap" class="hero-logo" onerror="this.style.display='none';document.getElementById('hero-logo-fallback').style.display='flex'">
+        <div id="hero-logo-fallback" class="hero-logo-fallback" style="display:none">
+          <span class="hlf-top">BÁNKI</span>
+          <span class="hlf-line"></span>
+          <span class="hlf-bottom">DIÁKNAP</span>
+        </div>
+      </div>
+      <div class="hero-meta">2026. május 15. &mdash; csütörtök</div>
+      <h1 class="hero-title">Egy nap,<br>mikor semmi<br><em>nem kötelező.</em></h1>
+      <div class="countdown-wrap" id="countdown-wrap">
+        <div class="countdown">
+          <div class="cd-item">
+            <span class="cd-num" id="cd-days">--</span>
+            <span class="cd-label">nap</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cd-hours">--</span>
+            <span class="cd-label">óra</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cd-mins">--</span>
+            <span class="cd-label">perc</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-item">
+            <span class="cd-num" id="cd-secs">--</span>
+            <span class="cd-label">mp</span>
+          </div>
+        </div>
+      </div>
+      <div class="countdown-today" id="countdown-today">Ma van a Diáknap</div>
+    </div>
+    <a href="#highlights" class="scroll-hint" aria-label="Görgets le">
+      <span class="sh-text">scroll</span>
+      <div class="sh-line"></div>
+    </a>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section class="section highlights-section" id="highlights">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Ezeket mindenképpen</h2>
+        <p class="section-sub">Öt állomás, amit nem úszol meg</p>
+      </div>
+      <div class="highlights-grid" id="highlights-grid"></div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section programs-section" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Mind a 24</h2>
+        <p class="section-sub">Válassz egyet. Vagy mindet. Senki nem mondja meg.</p>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Összes</button>
+        <button class="filter-btn" data-filter="fixed">Fix időpont</button>
+        <button class="filter-btn" data-filter="allday">Egész nap</button>
+        <button class="filter-btn" data-filter="special">Különleges</button>
+      </div>
+      <div class="programs-grid" id="programs-grid"></div>
+    </div>
+  </section>
+
+  <!-- LIVE -->
+  <section class="section live-section" id="live">
+    <div class="container">
+      <div class="section-header">
+        <div class="live-badge-wrap">
+          <span class="live-dot"></span>
+          <span class="live-badge-text">ÉLŐBEN</span>
+        </div>
+        <h2 class="section-title">Nem tudsz ott lenni?</h2>
+        <p class="section-sub">Kísérjük figyelemmel együtt &mdash; május 15-én 8:00-tól</p>
+      </div>
+      <div class="live-player">
+        <div class="live-placeholder" id="live-placeholder">
+          <div class="lp-inner">
+            <div class="lp-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <p class="lp-title">Az adás még nem kezdődött el</p>
+            <p class="lp-sub">Térj vissza május 15.-én reggel</p>
+          </div>
+        </div>
+        <div class="live-iframe-wrap" id="live-iframe-wrap">
+          <iframe
+            id="yt-iframe"
+            src=""
+            title="Bánki Diáknap 2026 – Élő közvetítés"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTER -->
+  <section class="section poster-section" id="poster">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Plakátok</h2>
+      </div>
+      <div class="poster-grid">
+        <div class="poster-item">
+          <img src="assets/daiknap_zold_plakat.png" alt="Bánki Diáknap 2026 plakát – zöld" class="poster-img">
+        </div>
+        <div class="poster-item">
+          <img src="assets/daiknap_kek_plakat.png" alt="Bánki Diáknap 2026 plakát – kék" class="poster-img">
+        </div>
+        <div class="poster-item">
+          <img src="assets/daiknap_lila_plakat.png" alt="Bánki Diáknap 2026 plakát – lila" class="poster-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-school">TSZC Bánki Donát - Péch Antal Technikum</span>
+        <span class="footer-dok">Diákönkormányzat &middot; 2026</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-date">2026. május 15.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scroll-top" aria-label="Vissza a tetejére">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
