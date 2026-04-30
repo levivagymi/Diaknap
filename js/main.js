@@ -478,8 +478,14 @@ const galleryPhotos = [
   }
 
   function updateDownload(src, alt) {
-    lbDownload.href = src;
-    lbDownload.download = alt.replace(/\s+/g, '_') + '.jpg';
+    if (src) {
+      lbDownload.href = src;
+      lbDownload.download = alt.replace(/\s+/g, '_') + '.jpg';
+      lbDownload.style.display = '';
+    } else {
+      lbDownload.href = '';
+      lbDownload.style.display = 'none';
+    }
   }
 
   function open(index) {
