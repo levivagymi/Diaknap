@@ -356,3 +356,190 @@ window.addEventListener('scroll', () => {
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+/* ===== GALLERY DATA ===== */
+const galleryPhotos = [
+  { src: '', alt: 'Diáknap 2026 – 1' },
+  { src: '', alt: 'Diáknap 2026 – 2' },
+  { src: '', alt: 'Diáknap 2026 – 3' },
+  { src: '', alt: 'Diáknap 2026 – 4' },
+  { src: '', alt: 'Diáknap 2026 – 5' },
+  { src: '', alt: 'Diáknap 2026 – 6' },
+  { src: '', alt: 'Diáknap 2026 – 7' },
+  { src: '', alt: 'Diáknap 2026 – 8' },
+  { src: '', alt: 'Diáknap 2026 – 9' },
+  { src: '', alt: 'Diáknap 2026 – 10' },
+  { src: '', alt: 'Diáknap 2026 – 11' },
+  { src: '', alt: 'Diáknap 2026 – 12' },
+];
+
+/* ===== GALLERY RENDER ===== */
+(function () {
+  const grid = document.getElementById('galleryGrid');
+  galleryPhotos.forEach((photo, i) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item fade-up';
+    item.style.transitionDelay = `${i * 40}ms`;
+    if (photo.src) {
+      const img = document.createElement('img');
+      img.src = photo.src;
+      img.alt = photo.alt;
+      img.loading = 'lazy';
+      item.appendChild(img);
+    }
+    grid.appendChild(item);
+  });
+  document.querySelectorAll('#galleryGrid .fade-up').forEach(el => observer.observe(el));
+})();
+
+/* ===== GALLERY UNLOCK ===== */
+(function () {
+  const GALLERY_PASSWORD = 'bankitb123';
+  const grid        = document.getElementById('galleryGrid');
+  const lockOverlay = document.getElementById('galleryLockOverlay');
+  const modalOverlay = document.getElementById('galleryModalOverlay');
+  const input       = document.getElementById('galleryPasswordInput');
+  const errorMsg    = document.getElementById('galleryModalError');
+  const submitBtn   = document.getElementById('galleryModalSubmit');
+  const cancelBtn   = document.getElementById('galleryModalCancel');
+
+  function unlockGallery() {
+    grid.classList.add('unlocked');
+    lockOverlay.classList.add('hidden');
+    closeModal();
+  }
+
+  function openModal() {
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    input.value = '';
+    errorMsg.classList.remove('visible');
+    setTimeout(() => input.focus(), 100);
+  }
+
+  function closeModal() {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function tryPassword() {
+    if (input.value === GALLERY_PASSWORD) {
+      localStorage.setItem('gallery-unlocked', '1');
+      unlockGallery();
+    } else {
+      errorMsg.classList.add('visible');
+      input.classList.remove('shake');
+      void input.offsetWidth;
+      input.classList.add('shake');
+      input.addEventListener('animationend', () => input.classList.remove('shake'), { once: true });
+    }
+  }
+
+  if (localStorage.getItem('gallery-unlocked') === '1') {
+    unlockGallery();
+    return;
+  }
+
+  lockOverlay.addEventListener('click', openModal);
+  lockOverlay.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
+  });
+  submitBtn.addEventListener('click', tryPassword);
+  cancelBtn.addEventListener('click', closeModal);
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') tryPassword();
+  });
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+  });
+})();
+
+/* ===== GALLERY LIGHTBOX ===== */
+(function () {
+  const overlay    = document.getElementById('galleryLightbox');
+  const lbImg      = document.getElementById('galleryLbImg');
+  const lbPrev     = document.getElementById('galleryLbPrev');
+  const lbNext     = document.getElementById('galleryLbNext');
+  const lbClose    = document.getElementById('galleryLbClose');
+  const lbCounter  = document.getElementById('galleryLbCounter');
+  const lbDownload = document.getElementById('galleryLbDownload');
+
+  let items = [];
+  let current = 0;
+
+  function getItems() {
+    return Array.from(document.querySelectorAll('#galleryGrid .gallery-item'));
+  }
+
+  function updateDownload(src, alt) {
+    lbDownload.href = src;
+    lbDownload.download = alt.replace(/\s+/g, '_') + '.jpg';
+  }
+
+  function open(index) {
+    items = getItems();
+    current = index;
+    const photo = galleryPhotos[current];
+    lbImg.src = photo.src || '';
+    lbImg.alt = photo.alt;
+    lbCounter.textContent = `${current + 1} / ${items.length}`;
+    lbPrev.disabled = current === 0;
+    lbNext.disabled = current === items.length - 1;
+    updateDownload(photo.src || '', photo.alt);
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(dir) {
+    const next = current + dir;
+    if (next < 0 || next >= items.length) return;
+    lbImg.style.opacity = '0';
+    lbImg.style.transform = 'scale(0.92)';
+    setTimeout(() => {
+      current = next;
+      const photo = galleryPhotos[current];
+      lbImg.src = photo.src || '';
+      lbImg.alt = photo.alt;
+      lbCounter.textContent = `${current + 1} / ${items.length}`;
+      lbPrev.disabled = current === 0;
+      lbNext.disabled = current === items.length - 1;
+      updateDownload(photo.src || '', photo.alt);
+      lbImg.style.opacity = '';
+      lbImg.style.transform = '';
+    }, 160);
+  }
+
+  document.getElementById('galleryGrid').addEventListener('click', (e) => {
+    const item = e.target.closest('.gallery-item');
+    if (!item) return;
+    items = getItems();
+    const index = items.indexOf(item);
+    if (index !== -1) open(index);
+  });
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click', () => navigate(-1));
+  lbNext.addEventListener('click', () => navigate(1));
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape')      close();
+    if (e.key === 'ArrowLeft')   navigate(-1);
+    if (e.key === 'ArrowRight')  navigate(1);
+  });
+})();
