@@ -870,7 +870,7 @@ button {
 }
 
 .gallery-item {
-  aspect-ratio: 4/3;
+  aspect-ratio: 4 / 3;
   background: var(--surface2);
   border-radius: 10px;
   overflow: hidden;
@@ -1086,6 +1086,10 @@ button {
     font-size: 12px;
     padding: 7px 13px;
   }
+}
+
+#galleryLightbox .lb-counter {
+  bottom: 70px;
 }
 
 /* ===== FOOTER ===== */
