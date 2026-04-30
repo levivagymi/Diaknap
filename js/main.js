@@ -52,7 +52,7 @@ function applyTheme(theme) {
   localStorage.setItem('theme', theme);
   const logoSrc = theme === 'light' ? 'assets/logo-light.png' : 'assets/logo-dark.png';
   if (navLogo) navLogo.src = logoSrc;
-  if (heroLogo) heroLogo.src = logoSrc;
+  if (heroLogo) heroLogo.src = 'assets/logo-dark.png';
 }
 
 themeToggle.addEventListener('click', () => {
