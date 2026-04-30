@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bánki Diáknap 2026</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diaknap.vercel.app/">
+  <meta property="og:title" content="Bánki Diáknap 2026">
+  <meta property="og:description" content="A TSZC Bánki Donát - Péch Antal Technikum éves diáknapja. Programok, bulizás, közösség.">
+  <meta property="og:image" content="https://diaknap.vercel.app/assets/og-index-green.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="hu_HU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bánki Diáknap 2026">
+  <meta name="twitter:description" content="A TSZC Bánki Donát - Péch Antal Technikum éves diáknapja. Programok, bulizás, közösség.">
+  <meta name="twitter:image" content="https://diaknap.vercel.app/assets/og-index-green.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -166,10 +183,52 @@
         <span class="footer-dok">Diákönkormányzat &middot; 2026</span>
       </div>
       <div class="footer-right">
+        <a href="hozzaferes.html" class="footer-access-link">Részvételi feltételek</a>
         <span class="footer-date">2026. május 15.</span>
       </div>
     </div>
   </footer>
+
+  <!-- ACCESS MODAL -->
+  <div class="access-modal-overlay" id="access-modal-overlay">
+    <div class="access-modal" role="dialog" aria-modal="true" aria-labelledby="access-modal-title">
+      <div class="access-modal-header">
+        <div class="access-modal-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h2 class="access-modal-title" id="access-modal-title">Fontos tájékoztatás a részvételi feltételekről</h2>
+      </div>
+      <div class="access-modal-body">
+        <p>A jelen weboldal, valamint a <strong>2026. május 15-én</strong> megrendezésre kerülő <strong>Bánki Diáknap</strong> esemény kizárólag a <strong>TSZC Bánki Donát – Péch Antal Technikum</strong> aktív tanulói számára érhető el és szól.</p>
+        <p>Az iskolai tanulói jogviszonnyal nem rendelkező személyek – ideértve más intézmények diákjait, külső vendégeket, barátokat és ismerősöket – <strong>nem jogosultak</strong> a rendezvényre belépni, és nem vehetnek részt annak programjain.</p>
+        <div class="access-modal-notice">
+          <p class="access-modal-notice-title">Ha bánkis diák vagy, rád is felelősség hárul</p>
+          <p>Az iskola közösségének védelme érdekében kérünk, hogy ezt az oldalt ne oszd meg iskolán kívüli személyekkel, és ne hívj meg külső személyeket a rendezvényre. A részvételi feltételek megsértése komoly következményekkel járhat mind az érintett személyre, mind a meghívó tanulóra nézve.</p>
+        </div>
+        <p class="access-modal-footer-note">Ez nem formai szükségesség – az iskolai közösség és a rendezvény zavartalan lebonyolítása érdekében hozott, felelős döntés.</p>
+      </div>
+      <div class="access-modal-actions">
+        <button class="access-modal-btn" id="access-modal-close">Megértettem és elfogadom</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Plakát galéria">
+    <button class="lb-close" id="lb-close" aria-label="Bezárás">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Előző plakát">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lb-img-wrap">
+      <img class="lb-img" id="lb-img" src="" alt="">
+    </div>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Következő plakát">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
 
   <!-- SCROLL TO TOP -->
   <button class="scroll-top" id="scroll-top" aria-label="Vissza a tetejére">
