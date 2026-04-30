@@ -290,7 +290,7 @@ button {
 
 .hero-title em {
   font-style: normal;
-  color: var(--red);
+  color: var(--green);
 }
 
 /* Countdown */
@@ -316,7 +316,7 @@ button {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: var(--red);
+  color: var(--green);
   font-variant-numeric: tabular-nums;
   line-height: 1;
   transition: transform 0.15s ease;
@@ -483,9 +483,9 @@ button {
 }
 
 .filter-btn.active {
-  background: var(--red);
+  background: var(--green);
   color: #fff;
-  border-color: var(--red);
+  border-color: var(--green);
 }
 
 .programs-grid {
@@ -610,7 +610,7 @@ button {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--green);
   animation: livePulse 1.5s ease-in-out infinite;
 }
 
@@ -623,7 +623,7 @@ button {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
-  color: var(--red);
+  color: var(--green);
   text-transform: uppercase;
 }
 
@@ -690,7 +690,7 @@ button {
 
 .poster-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -948,8 +948,8 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: rgba(255, 49, 49, 0.12);
-  color: var(--red);
+  background: rgba(0, 191, 99, 0.12);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -983,8 +983,8 @@ button {
 }
 
 .access-modal-notice {
-  background: rgba(255, 49, 49, 0.07);
-  border: 1px solid rgba(255, 49, 49, 0.2);
+  background: rgba(0, 191, 99, 0.07);
+  border: 1px solid rgba(0, 191, 99, 0.2);
   border-radius: 12px;
   padding: 16px 18px;
   display: flex;
@@ -995,7 +995,7 @@ button {
 .access-modal-notice-title {
   font-size: 13px !important;
   font-weight: 700 !important;
-  color: var(--red) !important;
+  color: var(--green) !important;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1013,7 +1013,7 @@ button {
 .access-modal-btn {
   width: 100%;
   padding: 14px 24px;
-  background: var(--red);
+  background: var(--green);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -1025,7 +1025,7 @@ button {
 }
 
 .access-modal-btn:hover {
-  background: #e02020;
+  background: #00a854;
 }
 
 .access-modal-btn:active {
@@ -1063,7 +1063,7 @@ button {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--red);
+  background: var(--blue);
   color: #fff;
   display: flex;
   align-items: center;
@@ -1073,7 +1073,7 @@ button {
   transform: translateY(16px);
   transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s;
   pointer-events: none;
-  box-shadow: 0 4px 16px rgba(255, 49, 49, 0.4);
+  box-shadow: 0 4px 16px rgba(56, 182, 255, 0.4);
 }
 
 .scroll-top.visible {
@@ -1083,7 +1083,7 @@ button {
 }
 
 .scroll-top:hover {
-  background: #e02020;
+  background: #1a9fe0;
 }
 
 /* ===== RESPONSIVE ===== */
