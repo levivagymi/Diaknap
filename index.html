@@ -186,7 +186,7 @@
       </div>
       <div class="gallery-wrapper">
         <div class="gallery-grid" id="galleryGrid"></div>
-        <div class="gallery-lock-overlay" id="galleryLockOverlay">
+        <div class="gallery-lock-overlay" id="galleryLockOverlay" role="button" tabindex="0" aria-label="Galéria zárolva — kattints a megnyitáshoz">
           <div class="gallery-lock-badge">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             Kattints a képek megtekintéséhez
@@ -201,8 +201,8 @@
     <div class="gallery-modal" role="dialog" aria-modal="true" aria-labelledby="galleryModalTitle">
       <h3 class="gallery-modal-title" id="galleryModalTitle">Jelszó szükséges</h3>
       <p class="gallery-modal-desc">Ez a tartalom csak Bánki diákok számára elérhető.</p>
-      <input type="password" id="galleryPasswordInput" class="gallery-modal-input" placeholder="Jelszó" autocomplete="current-password" />
-      <p class="gallery-modal-error" id="galleryModalError">Helytelen jelszó</p>
+      <input type="password" id="galleryPasswordInput" class="gallery-modal-input" placeholder="Jelszó" autocomplete="current-password" aria-describedby="galleryModalError" />
+      <p class="gallery-modal-error" id="galleryModalError" aria-live="polite">Helytelen jelszó</p>
       <div class="gallery-modal-actions">
         <button class="gallery-modal-cancel" id="galleryModalCancel">Mégse</button>
         <button class="gallery-modal-submit" id="galleryModalSubmit">Megnyitás</button>
