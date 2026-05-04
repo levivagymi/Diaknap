@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-bg.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -102,6 +103,62 @@
     </div>
   </section>
 
+  <!-- PLÁZS -->
+  <section class="section plazs-section" id="plazs">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🏖️ Plázs</h2>
+        <p class="section-sub">Belső udvar &mdash; Egész nap &mdash; Podcast, játékok, limonádé</p>
+      </div>
+
+      <div class="plazs-grid">
+
+        <!-- Megnyitó -->
+        <div class="plazs-card fade-up">
+          <div class="plazs-card-label">Diáknap megnyitó</div>
+          <div class="plazs-card-time-badge">08:00 – 08:10</div>
+          <ul class="plazs-timeline">
+            <li>
+              <span class="pt-time">07:55</span>
+              <span class="pt-event">Gyülekező a B udvaron, hangulatkeltő zene</span>
+            </li>
+            <li>
+              <span class="pt-time">08:00</span>
+              <span class="pt-event">Köszöntés &amp; főszervezők bemutatása</span>
+            </li>
+            <li>
+              <span class="pt-time">08:04</span>
+              <span class="pt-event">Programok ismertetése</span>
+            </li>
+            <li class="pt-highlight">
+              <span class="pt-time">08:08</span>
+              <span class="pt-event">Hivatalos megnyitás — indul a Diáknap!</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Napi menetrend -->
+        <div class="plazs-card plazs-card--schedule fade-up">
+          <div class="plazs-card-label">Napi menetrend</div>
+          <ul class="plazs-schedule">
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Diákokkal</span><span class="ps-dur">20 perc</span></li>
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Bacsa Tamás</span><span class="ps-dur">30 perc</span></li>
+            <li data-type="game"><span class="ps-tag">Játék</span><span class="ps-name">Limbó-bajnokság</span><span class="ps-dur">10 perc</span></li>
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Fadilné Eizen Erika</span><span class="ps-dur">45 perc</span></li>
+            <li data-type="break"><span class="ps-tag">Szünet</span><span class="ps-name"></span><span class="ps-dur">15 perc</span></li>
+            <li data-type="game"><span class="ps-tag">Játék</span><span class="ps-name">Ki mit tud?</span><span class="ps-dur">45 perc</span></li>
+            <li data-type="break"><span class="ps-tag">Szünet</span><span class="ps-name"></span><span class="ps-dur">15 perc</span></li>
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Barcza László</span><span class="ps-dur">30 perc</span></li>
+            <li data-type="break"><span class="ps-tag">Szünet</span><span class="ps-name"></span><span class="ps-dur">10 perc</span></li>
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Klementi Csaba &amp; Káldor Levente Viktor</span><span class="ps-dur">30 perc</span></li>
+            <li data-type="podcast"><span class="ps-tag">Podcast</span><span class="ps-name">Diákokkal</span><span class="ps-dur">20 perc</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROGRAMS -->
   <section class="section programs-section" id="programs">
     <div class="container">
@@ -162,16 +219,16 @@
       </div>
       <div class="poster-grid">
         <div class="poster-item">
-          <img src="assets/daiknap_zold_plakat.png" alt="Bánki Diáknap 2026 plakát – zöld" class="poster-img">
+          <img src="assets/daiknap_zold_plakat.png" alt="Bánki Diáknap 2026 plakát – zöld" class="poster-img" loading="lazy">
         </div>
         <div class="poster-item">
-          <img src="assets/daiknap_kek_plakat.png" alt="Bánki Diáknap 2026 plakát – kék" class="poster-img">
+          <img src="assets/daiknap_kek_plakat.png" alt="Bánki Diáknap 2026 plakát – kék" class="poster-img" loading="lazy">
         </div>
         <div class="poster-item">
-          <img src="assets/daiknap_lila_plakat.png" alt="Bánki Diáknap 2026 plakát – lila" class="poster-img">
+          <img src="assets/daiknap_lila_plakat.png" alt="Bánki Diáknap 2026 plakát – lila" class="poster-img" loading="lazy">
         </div>
         <div class="poster-item">
-          <img src="assets/podcast_plakat.png" alt="Bánki Diáknap 2026 plakát – lila" class="poster-img">
+          <img src="assets/podcast_plakat.png" alt="Bánki Diáknap 2026 plakát – podcast" class="poster-img" loading="lazy">
         </div>
       </div>
     </div>
@@ -284,6 +341,32 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
     <div class="lb-counter" id="lb-counter"></div>
+  </div>
+
+  <!-- PROGRAM DETAIL MODAL -->
+  <div class="prog-modal-overlay" id="prog-modal-overlay">
+    <div class="prog-modal" role="dialog" aria-modal="true" aria-labelledby="prog-modal-title">
+      <button class="prog-modal-close" id="prog-modal-close" aria-label="Bezárás">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="prog-modal-header">
+        <h2 class="prog-modal-title" id="prog-modal-title"></h2>
+        <div class="prog-modal-meta">
+          <span class="prog-modal-location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span id="prog-modal-location"></span>
+          </span>
+          <span id="prog-modal-time" class="pc-badge"></span>
+        </div>
+      </div>
+      <div class="prog-modal-divider"></div>
+      <div class="prog-modal-teacher-row">
+        <span class="prog-modal-teacher-label">Felelős tanár</span>
+        <span class="prog-modal-teacher-name" id="prog-modal-teacher"></span>
+      </div>
+      <div class="prog-modal-divider"></div>
+      <p class="prog-modal-desc" id="prog-modal-desc"></p>
+    </div>
   </div>
 
   <!-- SCROLL TO TOP -->
