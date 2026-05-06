@@ -201,9 +201,6 @@ button {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
   background-color: #0d0d0d;
   transform: scale(1.04);
   transition: transform 0.1s linear;
