@@ -1,5 +1,5 @@
 /* ===== DATA ===== */
-const YOUTUBE_STREAM_ID = ''; // ide kerül az ID pl. 'dQw4w9WgXcQ'
+const YOUTUBE_STREAM_ID = 'CGBynso5h50';
 
 const highlights = [
   { name: 'Plázs', location: 'Belső udvar', emoji: '🏖️', color: '#ff3131' },
