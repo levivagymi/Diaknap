@@ -4,7 +4,7 @@ const YOUTUBE_STREAM_ID = 'CGBynso5h50';
 const highlights = [
   { name: 'Plázs', location: 'Belső udvar', emoji: '🏖️', color: '#ff3131' },
   { name: 'HYROX Vetélkedő', location: 'Rekortán pálya', emoji: '💪', color: '#00bf63' },
-  { name: 'Bánki legerősebb embere', location: 'Konditerem', emoji: '🏋️', color: '#ffde59', dark: true },
+  { name: 'Bánki legerősebb embere', location: '60 méteres pálya', emoji: '🏋️', color: '#ffde59', dark: true },
   { name: 'Szabadulószoba', location: 'B12', emoji: '🔒', color: '#38b6ff' },
   { name: 'Tanár-Cosplay', location: 'Iskola területe', emoji: '🎭', color: '#ff3131' },
 ];
@@ -15,7 +15,7 @@ const programs = [
   { id: 2,  name: 'Drámajáték',                  location: 'Rajz terem',                 time: 'egész nap',   type: 'allday',  teacher: 'Molnár Klára',               desc: '2 fős csapatok húznak karaktert, helyszínt és szituációt – aztán meg kell alkotni és eljátszani egy kisebb jelenetet. Improvizáció, humor és kreativitás.' },
   { id: 3,  name: 'Bármi csak egy táska',        location: 'Iskola területe',            time: 'egész nap',   type: 'allday',  teacher: '–',                          desc: 'Minden diák hoz valamit, ami nem táska – a legjobb és legviccesebb alkotásokat értékeljük és jutalmazzuk.' },
   { id: 4,  name: 'Karaoke',                     location: 'Technika terem',             time: 'egész nap',   type: 'allday',  teacher: 'Horváth Veronika',           desc: 'Kötetlen éneklési lehetőség, ahol bárki előadhatja kedvenc dalát, egyénileg vagy csapatban.' },
-  { id: 5,  name: 'Tanár-Cosplay',               location: 'Iskola területe',            time: 'nagyszünet',  type: 'special', teacher: 'Hering Zsolt',               desc: 'Öltözz be a kedvenc tanárodnak és játszd el! Nagyszünetben összegyűlünk az aulában, majd közösen pontozunk és értékelünk.' },
+  { id: 5,  name: 'Tanár-Cosplay',               location: 'Iskola területe',            time: 'egész nap',  type: 'special', teacher: '–',                           desc: 'Öltözz be a kedvenc tanárodnak és játszd el! Nagyszünetben összegyűlünk az aulában, majd közösen pontozunk és értékelünk.' },
   { id: 6,  name: 'Bánki legerősebb embere',     location: '60 méteres pálya',           time: 'egész nap',   type: 'allday',  teacher: 'Fekete Gábor',               desc: 'Súlyemelőverseny kreatív erőpróbákkal – ki a Bánki legerősebb embere 2026-ban? Különböző fizikai kihívások várnak egész nap.' },
   { id: 7,  name: 'Foci bajnokság',              location: 'Ketrec',                     time: 'egész nap',   type: 'allday',  teacher: 'Zwickl-Szabó Judit',         desc: 'Osztályok közötti futballtorna a ketrecpályán – verbuválj csapatot és küzdj a bajnoki cím megszerzéséért!' },
   { id: 8,  name: 'ST Cinema Club',              location: 'Multimédia terem',           time: 'egész nap',   type: 'allday',  teacher: 'Seffer Tímea',               desc: 'Filmvetítés nyugodt környezetben, ahol a diákok kikapcsolódhatnak és közösen nézhetnek meg egy alkotást.' },
@@ -27,10 +27,10 @@ const programs = [
   { id: 14, name: 'Vakvezetés',                  location: 'A épület, 2. em. aula',      time: 'egész nap',   type: 'allday',  teacher: 'Gyimesi Janka',              desc: 'Kétfős csapatok: az egyik játékos bekötött szemmel halad, míg a társa szóban irányítja. A cél: minél gyorsabban és hibamentesebben teljesíteni a pályát.' },
   { id: 15, name: 'Ping-pong liga',              location: 'Aula',                       time: 'egész nap',   type: 'allday',  teacher: 'Fadilné Eizen Erika',        desc: 'Folyamatosan zajló asztalitenisz-bajnokság – állj asztalhoz bármikor és küzdj fel magad a ligatabella csúcsára.' },
   { id: 16, name: 'Plázs',                       location: 'Belső udvar',                time: 'egész nap',   type: 'allday',  teacher: 'DÖK',                        desc: 'Közösségi tér DJ-vel, podcast-szerű beszélgetős műsorokkal (tanár-diák, diák-diák, tanár-tanár) és limonádéval – a nap szíve.' },
-  { id: 17, name: 'Kémia bemutató',              location: 'A épület, 2. em. kémialabor',time: 'egész nap',   type: 'allday',  teacher: 'Máth Csaba',                 desc: 'Látványos kísérletek és érdekes bemutatók a kémia világából.' },
+  { id: 17, name: 'Kémia bemutató',              location: 'A épület, 2. em. kémialabor',time: '08:00-12:00',   type: 'halfday',  teacher: 'Máth Csaba',              desc: 'Látványos kísérletek és érdekes bemutatók a kémia világából.' },
   { id: 18, name: 'Szabadulószoba',              location: 'B12',                        time: 'egész nap',   type: 'allday',  teacher: 'Klementi Csaba',             desc: 'Logikai feladatokkal teli játék, ahol a csapatoknak együttműködve kell kijutniuk a szobából. 2–3 fős csapatokkal.' },
   { id: 19, name: 'Kincskeresés',                location: 'B épület',                   time: 'egész nap',   type: 'allday',  teacher: 'DÖK',                        desc: 'A B épületben véletlenszerű tárgyak bújnak meg – játékos szöveges clue-k alapján kell megtalálni őket. Ki ér a kincshez először?' },
-  { id: 20, name: 'Kvíz verseny',                location: 'A/228',                      time: 'egész nap',   type: 'allday',  teacher: 'Vojnár Ágnes',               desc: 'Általános műveltségi vetélkedő, ahol a csapatok különböző témákban mérik össze tudásukat.' },
+  { id: 20, name: 'Kvíz verseny',                location: 'A/228',                      time: 'egész nap',   type: 'allday',  teacher: 'Finta Ákos',                 desc: 'Általános műveltségi vetélkedő, ahol a csapatok különböző témákban mérik össze tudásukat.' },
   { id: 21, name: 'Fotóstand',                   location: 'Aula',                       time: 'egész nap',   type: 'allday',  teacher: '–',                          desc: 'Kreatív fotózkodási lehetőség vicces kellékekkel és háttérrel – vidd haza az emléket a Diáknap 2026-ról.' },
   { id: 22, name: 'Kovácsolás misztériuma',      location: 'Műhelyek',                   time: 'egész nap',   type: 'allday',  teacher: 'Magócs Tibor',               desc: 'Bemutató a fémmegmunkálás világából, ahol a résztvevők megismerhetik a kovácsolás alapjait.' },
   { id: 23, name: 'Vita klub',                   location: 'Könyvtár',                   time: '08:00–12:00', type: 'halfday', teacher: 'Barcza László',              desc: 'Formális vita előre megadott témákkal, Pro és Kontra oldallal – érvelj, meggyőzz és védd az álláspontodat strukturált keretek között.' },
@@ -443,7 +443,7 @@ const galleryPhotos = [
 
 /* ===== GALLERY UNLOCK ===== */
 (function () {
-  const GALLERY_HASH = 'f4c9521099e292caa5445b44177650154325c99673c91202e73d11279643b5f1';
+  const GALLERY_HASH = 'f4c9521099e292caa5445b44177650154325c99673c91202e73d11279643b5f1'; // Ha ezt megtaláltad, gratula :D by.: klevi
   const grid        = document.getElementById('galleryGrid');
   const lockOverlay = document.getElementById('galleryLockOverlay');
   const modalOverlay = document.getElementById('galleryModalOverlay');
