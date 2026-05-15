@@ -1,5 +1,5 @@
 /* ===== DATA ===== */
-const YOUTUBE_STREAM_ID = 'CGBynso5h50';
+const YOUTUBE_STREAM_ID = 'Ae0RRD44Jr8';
 
 const highlights = [
   { name: 'Plázs', location: 'Aula', emoji: '🏖️', color: '#ff3131' },
@@ -10,7 +10,7 @@ const highlights = [
 ];
 
 const programs = [
-  { id: 0,  name: 'Diáknap megnyitó',           location: 'B belső udvar',              time: '08:00',       type: 'fixed',   teacher: 'Juhász Arnold',              desc: 'A Diáknap hivatalos megnyitója a B udvaron – a főszervezők köszöntik a diákokat, ismertetik a nap programjait, majd elindul a buli.' },
+  { id: 0,  name: 'Diáknap megnyitó',           location: 'Aula',              time: '08:00',       type: 'fixed',   teacher: 'Juhász Arnold',              desc: 'A Diáknap hivatalos megnyitója a B udvaron – a főszervezők köszöntik a diákokat, ismertetik a nap programjait, majd elindul a buli.' },
   { id: 2,  name: 'Drámajáték',                  location: 'Rajz terem',                 time: 'egész nap',   type: 'allday',  teacher: 'Molnár Klára',               desc: '2 fős csapatok húznak karaktert, helyszínt és szituációt – aztán meg kell alkotni és eljátszani egy kisebb jelenetet. Improvizáció, humor és kreativitás.' },
   { id: 3,  name: 'Bármi csak egy táska',        location: 'Iskola területe',            time: 'egész nap',   type: 'allday',  teacher: '–',                          desc: 'Minden diák hoz valamit, ami nem táska – a legjobb és legviccesebb alkotásokat értékeljük és jutalmazzuk.' },
   { id: 4,  name: 'Karaokee',                     location: 'Technika terem',             time: 'egész nap',   type: 'allday',  teacher: 'Horváth Veronika',           desc: 'Kötetlen éneklési lehetőség, ahol bárki előadhatja kedvenc dalát, egyénileg vagy csapatban.' },
